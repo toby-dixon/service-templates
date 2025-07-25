@@ -1,0 +1,22 @@
+{
+    "name": "application/application-name",
+    "description": "Slim application template",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "ApplicationName\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Toby Dixon",
+            "email": "toby.dixon@idealsalessolutions.co.uk"
+        }
+    ],
+    "require": {
+        "slim/slim": "^4.14",
+        "slim/psr7": "^1.7",
+        "php-di/php-di": "^7.0",
+        "monolog/monolog": "^3.9"
+    }
+}

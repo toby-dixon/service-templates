@@ -1,0 +1,19 @@
+services:
+  example-application-php:
+    container_name: example-application-php
+    build: ../services/example-application-php
+    environment:
+      LOG_LEVEL: DEBUG
+      LOG_FILE: /var/log/app-logs/example-application
+    volumes:
+      - ../services/example-application-php:/var/www/html/example-application-php
+      - ../logs:/var/log/app-logs
+
+  example-application-nginx:
+    container_name: example-application-nginx
+    image: nginx:1.28.0-alpine-slim
+    ports:
+      - "80:80"
+    volumes:
+      - ../services/example-application-php:/var/www/html/example-application-php
+      - ../services/example-application-nginx/nginx.conf:/etc/nginx/nginx.conf
