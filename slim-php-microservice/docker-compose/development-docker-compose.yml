@@ -4,7 +4,7 @@ services:
     build: ../services/example-application-php
     environment:
       LOG_LEVEL: DEBUG
-      LOG_FILE: /var/log/app-logs/example-application
+      LOG_FILE: /var/log/app-logs/example-application.log
     volumes:
       - ../services/example-application-php:/var/www/html/example-application-php
       - ../logs:/var/log/app-logs
